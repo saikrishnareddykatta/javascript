@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using Async attribute</title>
+  </head>
+  <body>
+    <!--With async browser can download the content parallel with DOM execution but it runs after the content is downloaded from network-->
+    <p>...content before scripts tag...</p>
+    <script
+      async
+      src="https://javascript.info/article/script-async-defer/long.js"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => alert("DOM ready!"));
+    </script>
+    <p>...content after scripts tag...</p>
+    <!--With Async attribute, browser downloads the content from network parallely with HTML DOM Parsing-->
+    <!--Once the content is downloaded, browser stops the HTML Parsing and runs the downloaded content-->
+    <!--In Async, scripts are independent, order of scripts tag doesn't guarntee the order of execution-->
+    <!--While using Async, DOM Content will be loaded independent of sccript tag execution-->
+  </body>
+</html>

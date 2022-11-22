@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Normal way of loading script</title>
+  </head>
+  <body>
+    <p>...content before script loading...</p>
+    <!-- Normal way of loading a script into the HTML -->
+    <!-- Best Pratice to keep the script tag at the bottom of the HTML -->
+    <!-- With Async and Defer, browser build the HTML DOM and can download the content in background parallely but execution is different for Async and Defer-->
+    <script src="https://javascript.info/article/script-async-defer/long.js?speed=1"></script>
+    <p>...content after script loading...</p>
+  </body>
+</html>

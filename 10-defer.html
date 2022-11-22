@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using Defer Attribute</title>
+  </head>
+  <body>
+    <!--With defer browser can download the content parallel with DOM execution but it runs after HTML DOM Parsing is done-->
+    <p>...content before scripts tag...</p>
+    <script
+      defer
+      src="https://javascript.info/article/script-async-defer/long.js"
+    ></script>
+    <script
+      defer
+      src="https://javascript.info/article/script-async-defer/small.js"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => alert("DOM ready!"));
+    </script>
+    <p>...content after scripts tag...</p>
+    <!--With defer attribute, browser downloads the content from network parallely with HTML DOM Parsing-->
+    <!--Once the HTML Parsing is done the browser runs the downloaded content-->
+    <!--In defer, order of scripts tags execution is realtive. The second script tag will executed only after the first script tag is executed even though the second script
+    tag content downloaded before the first script tag content -->
+    <!--While using Defer, DOM Content will be loaded once all the script tags are executed-->
+  </body>
+</html>
